@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { getStationStatus } from '../../services/api';
+import { getStationStatus } from '@services/api';
+import './StationDetails.css'; // Import the CSS file
 
 interface StationDetailProps {
   stationId: string | null;
@@ -13,12 +14,12 @@ const StationDetails: React.FC<StationDetailProps> = ({ stationId, location }) =
     num_bikes_available: number;
     num_docks_available: number;
   } | null>(null);
-  const [loadingStationDetail, setLoadingStationDetail] = useState<boolean>(false); // Updated variable name
+  const [loadingStationDetail, setLoadingStationDetail] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (stationId) {
-      setLoadingStationDetail(true); // Start loading station details
+      setLoadingStationDetail(true);
       getStationStatus(location, stationId)
         .then(response => {
           setStationStatus(response.data); // Adjust based on your API response
@@ -29,7 +30,7 @@ const StationDetails: React.FC<StationDetailProps> = ({ stationId, location }) =
           setError('Failed to fetch station details');
         })
         .finally(() => {
-          setLoadingStationDetail(false); // Stop loading station details
+          setLoadingStationDetail(false);
         });
     }
   }, [stationId, location]);
@@ -47,18 +48,17 @@ const StationDetails: React.FC<StationDetailProps> = ({ stationId, location }) =
   }
 
   return (
-    <div style={{
-      padding: '20px',
-      background: '#fff',
-      borderRadius: '8px',
-      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-      maxWidth: '400px',
-      margin: 'auto',
-    }}>
-      <h2 style={{ marginTop: 0 }}>{stationStatus.station_name}</h2>
-      <p><strong>Station ID:</strong> {stationStatus.station_id}</p>
-      <p><strong>Available Bikes:</strong> {stationStatus.num_bikes_available}</p>
-      <p><strong>Available Docks:</strong> {stationStatus.num_docks_available}</p>
+    <div className="station-detail-container"> {/* Apply the CSS class */}
+      <h2 className="station-detail-title">{stationStatus.station_name}</h2> {/* Apply the CSS class */}
+      <p className="station-detail-item">
+        <strong>Station ID:</strong> {stationStatus.station_id}
+      </p>
+      <p className="station-detail-item">
+        <strong>Available Bikes:</strong> {stationStatus.num_bikes_available}
+      </p>
+      <p className="station-detail-item">
+        <strong>Available Docks:</strong> {stationStatus.num_docks_available}
+      </p>
     </div>
   );
 };

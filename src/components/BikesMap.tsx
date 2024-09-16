@@ -5,6 +5,7 @@ import { LatLngExpression, Icon } from 'leaflet';
 import { getStations } from '../services/api';
 import 'leaflet/dist/leaflet.css';
 import StationDetail from './StationDetails/StationDetails';
+import SystemInfo from './SystemInfo/SystemInfo';
 
 // Define a smaller Leaflet default icon
 const tinyIcon = new Icon({
@@ -77,55 +78,14 @@ const BikesMap: React.FC = () => {
 
   return (
     <div style={{ height: '100vh', width: '100vw', padding: '1rem', fontFamily: 'Arial, sans-serif', backgroundColor: '#f0f4f8' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1rem' }}>
-        <label htmlFor="location-select" style={{ marginRight: '10px', fontSize: '16px', color: '#333' }}>Select Location:</label>
-        <select
-          id="location-select"
-          value={selectedLocation}
-          onChange={handleLocationChange}
-          style={{
-            padding: '8px',
-            fontSize: '16px',
-            borderRadius: '4px',
-            border: '1px solid #ccc',
-            color: '#333',
-            backgroundColor: '#fff',
-            cursor: 'pointer'
-          }}
-        >
-          {locations.map(location => (
-            <option key={location.name} value={location.name.toLowerCase()}>
-              {location.name}
-            </option>
-          ))}
-        </select>
-
-        <div style={{
-          marginTop: '1rem',
-          padding: '1rem',
-          borderRadius: '8px',
-          backgroundColor: '#ffffff',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-          maxWidth: '600px',
-          width: '100%',
-        }}>
-          <h3 style={{ margin: '0 0 10px', fontSize: '24px', color: '#444' }}>System Information</h3>
-          <div style={{ fontSize: '18px', color: '#555' }}>
-            {loadingSystemInfo ? (
-              <p style={{ margin: '10px 0', textAlign: 'center' }}>System Information is loading...</p>
-            ) : (
-              <>
-                <p style={{ margin: '10px 0' }}><strong>Location:</strong> {centerLocation.name}</p>
-                <p style={{ margin: '10px 0' }}><strong>Number of Stations:</strong> {stations?.length}</p>
-                {stations?.length > 0 && (
-                  <p style={{ margin: '10px 0' }}><strong>Total Capacity:</strong> {stations?.reduce((sum, station) => sum + (station.capacity || 0), 0)}</p>
-                )}
-              </>
-            )}
-          </div>
-        </div>
-      </div>
-
+       <SystemInfo
+        selectedLocation={selectedLocation}
+        handleLocationChange={handleLocationChange}
+        locations={locations}
+        stations={stations}
+        loadingSystemInfo={loadingSystemInfo}
+        centerLocation={centerLocation}
+      />
       {loadingSystemInfo && <div style={{ textAlign: 'center' }}>Loading...</div>}
       {error && <div style={{ color: '#d9534f', textAlign: 'center' }}>{error}</div>}
 
