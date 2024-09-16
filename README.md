@@ -100,6 +100,10 @@ If you encounter issues:
 - Verify that the `.env` file contains the correct API URL.
 - Check the browser console and terminal output for any error messages.
 
+## CI/CD pipeline
+
+Similarly to the backend project, a pipeline that runs linting and tests is created in .github/workflows. This ensures new changes would comply with typescript standards and the code keeps its core functionality when new changes are added. Moreover, in the future automated dependabot upgrades could be scheduled, which also help in several security bugs, and the CI/CD pipeline makes it easy to integrate with that.
+
 ## Contributing
 
 Feel free to open issues or submit pull requests. Follow the contribution guidelines provided in the backend project repository if applicable.
