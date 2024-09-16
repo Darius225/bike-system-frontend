@@ -1,0 +1,23 @@
+/* StationDetail.css */
+.station-detail-container {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .station-detail-title {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .station-detail-item {
+    margin: 8px 0;
+    color: #555;
+  }
+  
+  .station-detail-item strong {
+    color: #222;
+  }
