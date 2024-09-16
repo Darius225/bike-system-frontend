@@ -2,7 +2,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import BikesMap from '@components/BikesMap';
 import StationDetails from '@components/StationDetails/StationDetails';
-import { getStations, getStationStatus, getSystemInformation } from '@services/api';
+import { getStations, getStationStatus } from '@services/api';
 
 // Mock the API functions
 vi.mock('@services/api', () => ({

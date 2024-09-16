@@ -33,7 +33,7 @@ const SystemInfo: React.FC<SystemInfoProps> = ({
          const systemResponse = await getSystemInformation(selectedLocation);
          setSystemInfoResponse(systemResponse.data as SystemInformation);
 
-      } catch (err) {
+      } catch {
         setError('Failed to load system information');
       } finally {
         setLoadingSystemInfo(false);
