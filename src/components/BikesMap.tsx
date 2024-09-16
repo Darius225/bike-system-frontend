@@ -6,6 +6,7 @@ import { getStations } from '../services/api';
 import 'leaflet/dist/leaflet.css';
 import StationDetail from './StationDetails/StationDetails';
 import SystemInfo from './SystemInfo/SystemInfo';
+import {Station} from "@custom-types/station.type";
 
 // Define a smaller Leaflet default icon
 const tinyIcon = new Icon({
@@ -14,17 +15,6 @@ const tinyIcon = new Icon({
   iconAnchor: [10, 20],
   popupAnchor: [0, -20],
 });
-
-interface Station {
-  station_id: string;
-  name: string;
-  address: string;
-  cross_street: string;
-  lat: number;
-  lon: number;
-  capacity: number;
-  is_virtual_station: boolean;
-}
 
 const locations = [
   { name: 'Oslo', lat: 59.9139, lng: 10.7522 },

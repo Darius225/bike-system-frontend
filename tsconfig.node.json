@@ -12,7 +12,8 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@services/*": ["src/services/*"]
+      "@services/*": ["src/services/*"],
+      "@custom-types/*": ["src/custom-types/*"]
     },
     "strict": true,
     "noUnusedLocals": true,

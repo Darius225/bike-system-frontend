@@ -1,11 +1,12 @@
 import React from 'react';
 import './SystemInfo.css'
+import { Station } from '@custom-types/station.type';
 
 interface SystemInfoProps {
   selectedLocation: string;
   handleLocationChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   locations: { name: string }[];
-  stations: any[];
+  stations: Station[];
   loadingSystemInfo: boolean;
   centerLocation: { name: string };
 }
