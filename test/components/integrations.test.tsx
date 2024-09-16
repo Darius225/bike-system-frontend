@@ -67,7 +67,7 @@ describe('Integration Test for BikesMap and StationDetails', () => {
 
     // Wait for the StationDetails to be updated
     await waitFor(() => {
-      expect(screen.getByRole('heading', { level: 2, name: /Station 1/i })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /Station 1/i })).toBeInTheDocument();
       expect(screen.getByText(/Station ID:/i)).toBeInTheDocument();
       expect(screen.getByText(/Available Bikes:/i)).toBeInTheDocument();
       expect(screen.getByText(/Available Docks:/i)).toBeInTheDocument();

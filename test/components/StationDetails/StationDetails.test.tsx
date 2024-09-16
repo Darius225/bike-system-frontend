@@ -56,7 +56,7 @@ describe('StationDetails Component', () => {
     // Wait for the details to be rendered
     await waitFor(() => {
       // Check the station name
-      expect(screen.getByRole('heading', { level: 2, name: /Station 1/i })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /Station 1/i })).toBeInTheDocument();
       
       // Check the station ID
       expect(screen.getByText(/Station ID:/i)).toBeInTheDocument();

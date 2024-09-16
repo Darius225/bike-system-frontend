@@ -19,13 +19,17 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: '18'
 
       - name: Install dependencies
         run: |
           npm install
           # or if you use yarn:
           # yarn install
+          - name: Install dependencies
+      - name: Run linting
+        run: |
+          npm run lint
 
       - name: Run tests
         run: |
