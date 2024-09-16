@@ -24,9 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-          # or if you use yarn:
-          # yarn install
-          - name: Install dependencies
+
       - name: Run linting
         run: |
           npm run lint

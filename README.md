@@ -85,14 +85,12 @@ The `vite.config.ts` file contains the configuration for Vite. It includes setti
 ### Linting and Formatting
 
 To ensure consistent code style, this project uses ESLint and Prettier. You can run the following commands to lint and format the code:
+`npm run lint` # or
+`yarn lint`
 
-    ```bash
-    npm run lint
-    npm run format
-    # or
-    yarn lint
-    yarn format
-    ```
+To fix what can be automatically fixed with lint, run:
+`npm run lint:fix`
+`
 
 ## Troubleshooting
 
