@@ -73,8 +73,6 @@ const BikesMap: React.FC = () => {
         handleLocationChange={handleLocationChange}
         locations={locations}
         stations={stations}
-        loadingSystemInfo={loadingSystemInfo}
-        centerLocation={centerLocation}
       />
       {loadingSystemInfo && <div style={{ textAlign: 'center' }}>Loading...</div>}
       {error && <div style={{ color: '#d9534f', textAlign: 'center' }}>{error}</div>}
