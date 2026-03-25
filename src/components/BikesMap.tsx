@@ -33,7 +33,6 @@ const BikesMap: React.FC = () => {
     setLoadingSystemInfo(true);
     getStations(selectedLocation)
       .then(response => {
-        console.log("Fetched Stations Data:", response.data);
         setStations(response.data);
         setError(null);
       })

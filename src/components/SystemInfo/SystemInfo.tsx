@@ -44,7 +44,6 @@ const SystemInfo: React.FC<SystemInfoProps> = ({
   }, [selectedLocation]);
 
   const totalCapacity = stations.reduce((sum, station) => sum + (station.capacity || 0), 0);
-  console.log("Here loading ", loadingSystemInfo);
   return (
     <div className="system-info-container">
       <label htmlFor="location-select" className="system-info-label">Select Location:</label>

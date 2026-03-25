@@ -56,6 +56,6 @@ ESLint + Prettier enforce TypeScript standards.
 
 A GitHub Actions workflow (`.github/workflows/short-ci.yml`) runs linting and tests on every push/PR to `main`.
 
-## License
+
 
 MIT — see [LICENSE](LICENSE).
